@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
             arr[i].style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
             arr[i].style.transition = "transform 1s, opacity 1s ease-in-out, box-shadow 1s ease-in-out";
         }
-        updateOpacity(); // Встановити правильну прозорість при старті
+        updateOpacity(); // Вdстановити правильну прозорість при старті
     }
 
     setTimeout(init, 1000);
