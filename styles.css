@@ -1,0 +1,109 @@
+/* Скидання стилів */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ec4b69, #ef6f91);
+    text-align: center;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Заголовок */
+#header {
+    padding: 5px;
+}
+
+#title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#timer {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* 3D-карусель */
+.container {
+    position: relative;
+    width: 550px; /* Збільшений розмір */
+    height: 500px;
+    perspective: 1600px; /* Глибший 3D-ефект */
+    margin-top: 5px;
+}
+
+.rotate-div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Фото */
+.rotate-div img {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Менше світіння для неактивних фото */
+    transform-origin: center;
+    transition: transform 1s, opacity 1s ease-in-out, box-shadow 1s ease-in-out; /* Плавні переходи */
+    opacity: 0.4; /* Всі фото спочатку напівпрозорі */
+}
+
+/* Коли фото активне */
+.rotate-div img.active {
+    opacity: 1; /* Активне фото 100% */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9); /* Яскраве світіння */
+}
+
+/* Анімація обертання */
+@keyframes rotateStep {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+
+#photo-text-container {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 15px;
+    display: inline-block;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9), 0px 0px 5px rgba(255, 255, 255, 0.8); /* Темна тінь + м'яке світіння */
+    transition: opacity 0.8s ease-in-out; /* Плавна поява тексту */
+    opacity: 1; /* Початково текст видимий */
+}
+
+#age-info{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    padding-top: 30px;
+    padding-bottom: 10px ;
+}
