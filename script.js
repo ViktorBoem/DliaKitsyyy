@@ -91,3 +91,10 @@ document.addEventListener("DOMContentLoaded", function () {
     /* Запускаємо обертання */
     setTimeout(rotateCarousel, rotationDelay);
 });
+document.addEventListener('click', function() {
+    const audio = document.getElementById('bg-music');
+    if (audio.muted) {
+        audio.muted = false;
+        audio.play();
+    }
+});
